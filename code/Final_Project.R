@@ -358,7 +358,6 @@ watchlist <- list(train = dtrain)
 
 # Train the XGBoost model
 model <- xgb.train(params = params, data = dtrain,nrounds = 2000, watchlist=watchlist)
-# bstSparse <- xgboost(data = train$data, label = train$label, max.depth = 2, eta = 1, nthread = 2, nrounds = 2, objective = "binary:logistic")
 
 # Predict using the trained model
 predictions <- predict(model, newdata = dtrain)
@@ -378,13 +377,5 @@ write.csv(xgboost_submission, file = "xgboost_submission.csv", row.names = FALSE
 
 #Ensamble 
 predictions <- 0.4 * lasso_pred + 0.6 * xgboost_pred
-
-# predictions <- mpfr(predictions, precBits = 20)
-
-# predictions <- exp(predictions)
-# print(predictions)
-# result_string <- format(result, digits = 20, scientific = FALSE)
-# predictions <- as.character(result)
-# print(predictions)
 Ensamble <- data.frame(Id = test_data$Id, SalePrice = predictions)
 write.csv(Ensamble, file = "Ensamble6535.csv", row.names = FALSE)

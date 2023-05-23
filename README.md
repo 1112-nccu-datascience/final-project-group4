@@ -1,5 +1,6 @@
-# [GroupID] your projrct title
+# [Group4] House Prices - Advanced Regression Techniques
 The goals of this project.
+redict sales prices and practice feature engineering, RFs, and gradient boosting
 
 ## Contributors
 |組員|系級|學號|工作分配|

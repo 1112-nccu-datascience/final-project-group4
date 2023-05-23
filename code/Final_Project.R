@@ -13,6 +13,11 @@ library(xgboost)
 training_data <- read.csv(file = file.path("train.csv")) # 讀取訓練資料集
 test_data <- read.csv(file = file.path("test.csv")) # 讀取測試資料集
 
+#列出特徵資料
+training_names <- names(training_data)
+test_names <- names(test_data)
+print(training_names)
+print(test_names)
 # # 先看圖找缺值
 # plot_Missing <- function(data_in, title = NULL){
 #   temp_df <- as.data.frame(ifelse(is.na(data_in), 0, 1))
@@ -222,41 +227,18 @@ dataset["TotalInsideSF"] <- as.numeric(dataset$X1stFlrSF + dataset$X2ndFlrSF)
 # 四月、五月、六月和七月的銷售量較多，可能表示有一定的季節性。我們創建一個新的變數，表示房屋是否在這些月份中售出
 dataset["IsHotMonth"] <- recode(dataset$MoSold, "1" = 0, "2" = 0, "3" = 0, "4" = 1, "5" = 1, "6" = 1, "7" = 1, "8" = 0, "9" = 0, "10" = 0, "11" = 0, "12" = 0)
 
-
-
-# dataset$LotShape <- factor(dataset$LotShape, levels = c('Reg', 'IR1', 'IR2', 'IR3'))
-# plot(dataset$LotShape)
-#
-# # 將 dataset$LandContour 轉換為字符變量
-# dataset$LandContour <- as.character(dataset$LandContour)
-#
-# # 確定唯一值並檢查是否存在非數字或無效值
-# unique_values <- unique(dataset$LandContour)
-# # 檢查 unique_values 中是否存在非數字或無效值，並進行處理
-#
-# # 將 dataset$LandContour 轉換為數字，並將非數字或無效值設置為 NA
-# dataset$LandContour <- as.numeric(dataset$LandContour)
-#
-# # 繪製圖形
-# plot(dataset$LandContour)
-#
-#
-# plot(dataset$LandSlope)
-# dataset['IsLandSlopeGtl'] <- ifelse(dataset$LandSlope == 'Gtl', 1, 0)
-# plot(dataset$PavedDrive)
-# dataset['HasPavedDrive'] <- ifelse(dataset$PavedDrive == 'Y', 1, 0)
-# plot(dataset$Electrical)
-# dataset['IsElectricalSBrkr'] <- ifelse(dataset$Electrical == 'SBrkr', 1, 0)
-# area_features <- c('X2ndFlrSF', 'MasVnrArea', 'WoodDeckSF', 'OpenPorchSF', 'EnclosedPorch', 'X3SsnPorch', 'ScreenPorch', 'WoodDeckSF')
-
+# 特徵工程，對房屋資料集中的鄰里特徵進行處理和轉換
+# 使用for迴圈遍歷區域特徵，創建新的特徵"Has{區域特徵}"，表示是否存在該區域特徵
 for (area_feature in area_features) {
   dataset[str_c("Has", area_feature)] <- ifelse(dataset[, area_feature] != 0, 1, 0)
 }
+# 從訓練資料(training_data)中選取"Neighborhood"和"SalePrice"兩個欄位，按照"Neighborhood"進行分組，計算每個鄰里的房屋"SalePrice"的中位數
 training_data[, c("Neighborhood", "SalePrice")] %>%
   group_by(Neighborhood) %>%
   summarise(avg = median(SalePrice, na.rm = TRUE)) %>%
   arrange(avg) %>%
   mutate(sorted = factor(Neighborhood, levels = Neighborhood)) %>%
+  # 使用ggplot函數繪製長條圖，x軸為排序後的鄰里，y軸為平均價格，並設置相應的圖形標題、標籤和限制y軸範圍
   ggplot(aes(x = sorted, y = avg)) +
   geom_bar(stat = "identity") +
   labs(x = "Neighborhood", y = "Price") +
@@ -324,18 +306,6 @@ column_types <- sapply(names(dataset), function(x) {
   class(dataset[[x]])
 })
 numeric_columns <- names(column_types[column_types != "factor"])
-# # 計算之前處理缺失值。你可以使用 na.rm = TRUE 參數來忽略缺失值。
-# skew <- sapply(numeric_columns, function(x) {
-#   skewness(dataset[[x]], na.rm = TRUE)
-# })
-#
-#
-# dkskew <- skew[skew > 0.75]
-# for (x in names(skew)) {
-#   bc = BoxCoxTrans(dataset[[x]], lambda = 0.15)
-#   dataset[[x]] = predict(bc, dataset[[x]])
-# }
-# str(numeric_columns)
 
 # 為了便於數據清理和特徵工程，我們將訓練集和測試集合併
 # 在再次將它們拆分以建立我們的最終模型

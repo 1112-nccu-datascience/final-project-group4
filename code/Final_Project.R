@@ -8,7 +8,6 @@ library(caret)
 library(stringr)
 library(e1071)
 library(xgboost)
-# library(Rmpfr)
 
 # 載入資料
 training_data <- read.csv(file = file.path("D:/vscode_R/final/train.csv"))  # 讀取訓練資料集

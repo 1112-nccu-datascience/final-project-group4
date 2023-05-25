@@ -31,7 +31,7 @@ idea by Noble WS (2009) [A Quick Guide to Organizing Computational Biology Proje
   * Size  train.csv -> 81 columns, 1460 rows
           test.csv  -> 80 cloumns, 1459 rows
 * Output
-[results/Ensamble2.csv]
+![results/Ensamble2.csv]
 ### code
 * Analysis steps
 * Which method or package do you use? 

@@ -30,8 +30,7 @@ idea by Noble WS (2009) [A Quick Guide to Organizing Computational Biology Proje
   * Format [csv檔](data/sample_submission.csv)
   * Size  train.csv -> 81 columns, 1460 rows
           test.csv  -> 80 cloumns, 1459 rows
-* Output
-![results/Ensamble2.csv]
+* Output [Ensamble2.csv](results/Ensamble2.csv)
 ### code
 * Analysis steps
 * Which method or package do you use? 

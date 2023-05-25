@@ -5,9 +5,11 @@ redict sales prices and practice feature engineering, RFs, and gradient boosting
 ## Contributors
 |組員|系級|學號|工作分配|
 |-|-|-|-|
-|何彥南|資科碩二|110753202|團隊中的吉祥物🦒，負責增進團隊氣氛| 
-|張小銘|資科碩二|xxxxxxxxx|團隊的中流砥柱，一個人打十個|
-
+|吉瀚宇|資碩工一|111753157|團隊中的吉祥物🦒，負責增進團隊氣氛| 
+|思沛淇|資碩計一|111753214|團隊的中流砥柱，一個人打十個|
+|陳輝|資碩計一|111753228|團隊中的吉祥物🦒，負責增進團隊氣氛|
+|張義猷|資碩計一|111753230|團隊中的吉祥物🦒，負責增進團隊氣氛|
+|徐宇文|資管碩一|111356003|團隊中的吉祥物🦒，負責增進團隊氣氛|
 ## Quick start
 You might provide an example commend or few commends to reproduce your analysis, i.e., the following R script
 ```R

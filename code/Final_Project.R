@@ -376,6 +376,6 @@ write.csv(xgboost_submission, file = "xgboost_submission.csv", row.names = FALSE
 
 
 #Ensamble 
-predictions <- 0.3 * lasso_pred + 0.7 * xgboost_pred
+predictions <- 0.7 * lasso_pred + 0.3 * xgboost_pred
 Ensamble <- data.frame(Id = test_data$Id, SalePrice = predictions)
-write.csv(Ensamble, file = "Ensamble6535.csv", row.names = FALSE)
+write.csv(Ensamble, file = "Ensamble7030.csv", row.names = FALSE)

@@ -10,7 +10,6 @@ library(stringr)
 library(e1071)
 library(xgboost)
 library(DiagrammeR)
-ALLOW_MEMORY_GROWTH=1
 
 minimax_scalar <- function(x){
     if (min(x) == max(x)) {

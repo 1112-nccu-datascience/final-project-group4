@@ -40,7 +40,7 @@ idea by Noble WS (2009) [A Quick Guide to Organizing Computational Biology Proje
   * Size
     * train.csv -> 81 columns, 1460 rows
     * test.csv  -> 80 cloumns, 1459 rows
-* Output 
+* Final Output 
   * [Ensamble91.csv](results/Ensamble91.csv)
 ### code
 * Analysis steps

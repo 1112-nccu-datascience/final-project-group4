@@ -187,7 +187,6 @@ params <- list(
 watchlist <- list(train = dtrain)
 
 # Train the XGBoost model
-set.seed(46)
 xgb <- xgb.train(params = params, data = dtrain,nrounds = 2000,
                    watchlist=watchlist, early_stopping_rounds=50)
 tree <- xgb.dump(xgb, with_stats = TRUE)

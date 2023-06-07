@@ -56,7 +56,6 @@ idea by Noble WS (2009) [A Quick Guide to Organizing Computational Biology Proje
 * Which method or package do you use? 
     * method
       * read.csv()：這個方法用於讀取 CSV 檔案並將其載入資料框
-      * rbind()：這個方法用於將兩個或多個資料框結合（按列結合）成一個資料框
       * Assignment (<-)：這用於將值指派給變數或資料框中的欄位
       * colSums()：此函數計算資料框的欄位總和
       * is.na()：此函數檢查向量或資料框中的缺失值（NA）

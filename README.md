@@ -73,9 +73,10 @@ idea by Noble WS (2009) [A Quick Guide to Organizing Computational Biology Proje
       * xgboost：這個套件用於梯度提升
 
 ### results
-* What is a null model for comparison?
+* null model - duoble variable nodel
+* comparison
 * How do your perform evaluation?
-  * Cross-validation, or extra separated data
+  * Cross-validation
 
 ## References
 * Packages you use

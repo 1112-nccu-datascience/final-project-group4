@@ -15,12 +15,12 @@ https://4pad7.shinyapps.io/group4_final_project/
 |徐宇文|資管碩一|111356003|團隊中的吉祥物🦒，負責增進團隊氣氛|
 
 ## Quick start
-先跑feature_engineering file
+先跑feature_engineering file, file內已有directory, 不用pass進去了
 ```R
 Rscript code/feature_engineering(Gary_edition).R
 ```
 
-再跑analysis file
+再跑analysis file, 會自己找data folder剛生成的file, 不用pass進去了
 ```R
 Rscript code/analysis(Gary_edition).R
 ```

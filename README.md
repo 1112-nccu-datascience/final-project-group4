@@ -75,12 +75,12 @@ idea by Noble WS (2009) [A Quick Guide to Organizing Computational Biology Proje
 
 ### results
 * null model - duoble variable nodel
-![My Image](img/my-image.jpg)
+![My Image](img/null_model.png)
 * comparison
-![My Image](img/my-image.jpg)
+![My Image](img/glmnet_result.png)
 * How do your perform evaluation?
   * Cross-validation
-![My Image](img/my-image.jpg)
+![My Image](img/fin_result.png)
 
 ## References
 * Packages you use

@@ -56,29 +56,38 @@ idea by Noble WS (2009) [A Quick Guide to Organizing Computational Biology Proje
     * 將訓練好且經過優化的模型應用於實際場景，並進行實時預測或決策。
 * Which method or package do you use? 
     * method
-      * read.csv()：這個方法用於讀取 CSV 檔案並將其載入資料框
-      * Assignment (<-)：這用於將值指派給變數或資料框中的欄位
-      * colSums()：此函數計算資料框的欄位總和
-      * is.na()：此函數檢查向量或資料框中的缺失值（NA）
-      * which()：此函數返回邏輯值為 TRUE 的索引或位置
-      * sort()：此函數按升序對向量或資料框進行排序
-      * names()：此函數返回因子中的水平或值的名稱
-      * factor()：此函數使用指定的水平創建一個因子變數
-      * recode()：此函數用於重新編碼向量或因子中的值
-    * package
-      * dplyr：這個套件提供了用於資料操作和轉換的函數
-      * tidyr：這個套件提供了整理和重塑資料的函數
-      * ggplot2：這個套件用於資料視覺化
-      * glmnet：這個套件提供了用於擬合帶有正則化的廣義線性模型的函數
-      * stringr：這個套件提供了字串操作的函數
-      * xgboost：這個套件用於梯度提升
+      * glmnet
+      * xgb
+      * ensemble learning
+      * lable encoding
+      * others 
+        * read.csv()：這個方法用於讀取 CSV 檔案並將其載入資料框
+        * Assignment (<-)：這用於將值指派給變數或資料框中的欄位
+        * colSums()：此函數計算資料框的欄位總和
+        * is.na()：此函數檢查向量或資料框中的缺失值（NA）
+        * which()：此函數返回邏輯值為 TRUE 的索引或位置
+        * sort()：此函數按升序對向量或資料框進行排序
+        * names()：此函數返回因子中的水平或值的名稱
+        * factor()：此函數使用指定的水平創建一個因子變數
+        * recode()：此函數用於重新編碼向量或因子中的值
+      
+
 
 ### results
 * null model - duoble variable nodel
+![My Image](img/my-image.jpg)
 * comparison
+![My Image](img/my-image.jpg)
 * How do your perform evaluation?
   * Cross-validation
+![My Image](img/my-image.jpg)
 
 ## References
 * Packages you use
+  * dplyr：這個套件提供了用於資料操作和轉換的函數
+  * tidyr：這個套件提供了整理和重塑資料的函數
+  * ggplot2：這個套件用於資料視覺化
+  * glmnet：這個套件提供了用於擬合帶有正則化的廣義線性模型的函數
+  * stringr：這個套件提供了字串操作的函數
+  * xgboost：這個套件用於梯度提升
 * Related publications

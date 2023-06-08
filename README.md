@@ -17,12 +17,12 @@ https://4pad7.shinyapps.io/group4_final_project/
 ## Quick start
 先跑feature_engineering file, file內已有directory, 不用pass進去了
 ```R
-Rscript code/feature_engineering(Gary_edition).R
+Rscript code/feature_engineering_Gary_edition.R
 ```
 
 再跑analysis file, 會自己找data folder剛生成的file, 不用pass進去了
 ```R
-Rscript code/analysis(Gary_edition).R
+Rscript code/analysis_Gary_edition.R
 ```
 
 ## Folder organization and its related description
